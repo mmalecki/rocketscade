@@ -43,8 +43,8 @@ module tube_coupler_positive(d1, d2, h1, h2, h_stopper, screw_dia, nutcatch_offs
     difference () {
       cylinder(
         h = h_stopper,
-        r1 = d1 / 2 + sleeve_thickness,
-        r2 = d2 / 2 + sleeve_thickness
+        d1 = d1 + 4 * sleeve_thickness,
+        d2 = d2 + 4 * sleeve_thickness
       );
 
       cylinder(
