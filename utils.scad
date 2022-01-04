@@ -1,11 +1,13 @@
-include <tube-coupler.scad>;
+module circle_sleeve (inner_d, thickness) {
+  difference () {
+    circle(d = inner_d + 2 * thickness);
+    circle(d = inner_d);
+  }
+}
 
 module cylinder_sleeve (height, inner_d, thickness) {
   linear_extrude(height) {
-    difference () {
-      circle(d = inner_d + 2 * thickness);
-      circle(d = inner_d);
-    }
+    circle_sleeve(inner_d, thickness);
   }
 }
 
