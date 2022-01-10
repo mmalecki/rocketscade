@@ -1,13 +1,4 @@
 include <utils.scad>;
-include <nutsnbolts/cyl_head_bolt.scad>;
-
-module hole_through_radial_cluster (hole_offset, hole_count, screw_dia, length) {
-  radial_cluster(hole_count) {
-    translate([hole_offset, 0, 0])
-      rotate([0, 90, 0])
-        hole_through(name = str("M", screw_dia), l = length);
-  }
-}
 
 module tube_coupler_screw_mount_cluster(depth, width, height, mount_offset, screw_dia, screw_offset, nutcatch_offset, screw_count) {
   radial_cluster(screw_count) {
