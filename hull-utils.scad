@@ -1,4 +1,3 @@
-include <tube-coupler.scad>;
 include <utils.scad>;
 
 module cylinder_sleeve_with_coupler_holes (height, inner_d, thickness, hole_offset, hole_count, screw_dia, screw_length) {
