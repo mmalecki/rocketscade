@@ -17,7 +17,7 @@ module tube_coupler_screw_mount_cluster(depth, width, height, mount_offset, scre
 module tube_coupler_screw_mount(depth, width, height, screw_dia, screw_offset, nutcatch_offset) {
   difference () {
     cube([depth, width, height]);
-    translate([depth - nutcatch_offset, width / 2, screw_offset]) {
+    translate([depth - nutcatch_offset, width / 2, screw_offset + screw_dia / 2]) {
       rotate([0, 90, 0]) nutcatch_sidecut(str("M", screw_dia));
     }
   }
@@ -79,10 +79,10 @@ module tube_coupler(d1, d2, h1, h2, h_stopper, screw_dia, nutcatch_offset, screw
   difference () {
     tube_coupler_positive(d1, d2, h1, h2, h_stopper, screw_dia, nutcatch_offset, screw_offset, screw_mount_width, screw_mount_depth, sleeve_thickness, screw_count);
 
-    translate([0, 0, screw_offset])
+    translate([0, 0, screw_offset + screw_dia / 2])
       hole_through_radial_cluster(d1 / 2 + sleeve_thickness, screw_count, screw_dia, screw_mount_depth + sleeve_thickness);
 
-    translate([0, 0, h1 + h2 + h_stopper - screw_offset]) {
+    translate([0, 0, h1 + h2 + h_stopper - screw_offset - screw_dia / 2]) {
       mirror([0, 0, 1]) 
         hole_through_radial_cluster(d1 / 2 + sleeve_thickness, screw_count, screw_dia, screw_mount_depth + sleeve_thickness);
     }
