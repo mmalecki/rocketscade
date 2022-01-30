@@ -84,7 +84,7 @@ module tube_coupler(d1, d2, h1, h2, h_stopper, screw_dia, nutcatch_offset, screw
 
     translate([0, 0, h1 + h2 + h_stopper - screw_offset - screw_dia / 2]) {
       mirror([0, 0, 1]) 
-        hole_through_radial_cluster(d1 / 2 + sleeve_thickness, screw_count, screw_dia, screw_mount_depth + sleeve_thickness);
+        hole_through_radial_cluster(d2 / 2 + sleeve_thickness, screw_count, screw_dia, screw_mount_depth + sleeve_thickness);
     }
   }
 }
