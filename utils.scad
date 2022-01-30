@@ -2,8 +2,8 @@ include <nutsnbolts/cyl_head_bolt.scad>;
 
 module circle_sleeve (inner_d, thickness) {
   difference () {
-    circle(d = inner_d + 2 * thickness);
-    circle(d = inner_d);
+    circle(r = inner_d / 2 + thickness);
+    circle(r = inner_d / 2);
   }
 }
 
@@ -17,7 +17,7 @@ module radial_cluster (count) {
   angle = 360 / count;
   for (i = [1 : angle]) {
     rotate([0, 0, i * angle]) {
-      render() children();
+      children();
     }
   }
 }
