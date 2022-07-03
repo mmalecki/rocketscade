@@ -15,7 +15,7 @@ module cylinder_sleeve (height, inner_d, thickness) {
 
 module radial_cluster (count) {
   angle = 360 / count;
-  for (i = [1 : angle]) {
+  for (i = [1 : count]) {
     rotate([0, 0, i * angle]) {
       children();
     }
