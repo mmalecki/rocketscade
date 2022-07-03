@@ -1,7 +1,6 @@
 include <utils.scad>;
 include <mounts.scad>;
 include <tube-coupler.scad>
-include <nutsnbolts/cyl_head_bolt.scad>;
 
 module nose_cone_mount_positive(d1, d2, h1, h2, h_stopper, screw_dia, nutcatch_offset, screw_offset, screw_mount_width, screw_mount_depth, sleeve_thickness, screw_count = 3) {
 
