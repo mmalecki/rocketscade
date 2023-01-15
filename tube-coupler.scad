@@ -18,7 +18,7 @@ module tube_coupler_screw_mount(depth, width, height, screw_dia, screw_offset, n
   difference () {
     cube([depth, width, height]);
     translate([depth - nutcatch_offset, width / 2, screw_offset + screw_dia / 2]) {
-      rotate([0, 90, 0]) nutcatch_sidecut(str("M", screw_dia));
+      rotate([0, 90, 180]) nutcatch_sidecut(str("M", screw_dia));
     }
   }
 }
